@@ -1,8 +1,2 @@
-# Curso SOLID com C#: princípios da programação orientada a objetos
+# Projeto para o curso de SOLID com CSharp
 
-## Aulas
-- Qualidade de software
-- Responsabilidade única
-- Inversão de dependências
-- Princípio do Aberto/Fechado
-- Segregação de Interfaces e Liskov
