@@ -3,7 +3,7 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
 
 ## Introdução
-Este projeto fornece uma documentação técnica abrangente sobre os princípios SOLID, baseado no curso SOLID da DevMedia. Esses princípios são princípios de design de software que visam tornar o software mais compreensível, flexível e mantenível.
+Este projeto fornece uma documentação técnica abrangente sobre os princípios SOLID, baseado no curso SOLID com C#: princípios da programação orientada a objetos da DevMedia. Esses princípios são princípios de design de software que visam tornar o software mais compreensível, flexível e mantenível.
 
 ## Princípios SOLID
 
