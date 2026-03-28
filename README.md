@@ -1,4 +1,4 @@
-# SOLID Principles Documentation
+# SOLID com C#: princípios da programação orientada a objetos
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
 
@@ -121,4 +121,4 @@ userManager.RegisterUser(new User());
 Este projeto está licenciado sob a Licença MIT.
 
 ## Informações do Autor
-Criado por: **jrmoreiram** | E-mail: jrmoreiram@gmail.com
+Criado por: **jrmoreiram** | E-mail: jumoreiram@gmail.com
