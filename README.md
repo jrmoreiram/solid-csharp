@@ -1,80 +1,124 @@
-# Documentação Técnica Completa sobre os Princípios SOLID em C#
+# SOLID Principles Documentation
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
 
 ## Introdução
-Os princípios SOLID são um conjunto de cinco princípios de design de software que visam tornar o software mais compreensível, flexível e mantenível. Esses princípios ajudam os desenvolvedores a criar sistemas que são mais fáceis de gerenciar e adaptar a mudanças futuras.
+Este documento fornece uma documentação técnica abrangente sobre os princípios SOLID, baseado no curso SOLID da DevMedia. Esses princípios são princípios de design de software que visam tornar o software mais compreensível, flexível e mantenível.
 
-## Explicação dos Princípios SOLID
+## Princípios SOLID
 
-1. **S** - **Single Responsibility Principle (Princípio da Responsabilidade Única)**  
-   Cada classe deve ter uma única responsabilidade, ou seja, deve haver apenas uma razão para que uma classe possa mudar.
+1. **Single Responsibility Principle (SRP)**  
+   - **Antes:**  Uma classe que faz muitas coisas.  
+   - **Depois:** Uma classe que tem apenas uma responsabilidade.
 
-2. **O** - **Open/Closed Principle (Princípio Aberto/Fechado)**  
-   As classes devem ser abertas para extensão, mas fechadas para modificação. Isso significa que deve ser possível adicionar novas funcionalidades sem modificar o código existente.
+   ```csharp
+   // Antes
+   public class UserManager { 
+       public void RegisterUser(User user) { }
+       public void SendEmail(User user) { }
+   }
+   
+   // Depois
+   public class UserManager { 
+       public void RegisterUser(User user) { }
+   }
 
-3. **L** - **Liskov Substitution Principle (Princípio da Substituição de Liskov)**  
-   As subclasses devem ser substituíveis por suas classes base sem alterar a correção do programa. Isso promove a reutilização e a flexibilidade do código.
+   public class EmailService { 
+       public void SendEmail(User user) { }
+   }
+   ```
 
-4. **I** - **Interface Segregation Principle (Princípio da Segregação de Interface)**  
-   Uma classe n��o deve ser forçada a implementar interfaces que não utiliza. É melhor ter várias interfaces específicas do que uma interface única e abrangente.
+2. **Open/Closed Principle (OCP)**  
+   - **Antes:** Classe que precisa ser modificada para novos comportamentos.  
+   - **Depois:** Classe que pode ser estendida sem modificar o código existente.
+   
+   ```csharp
+   // Antes
+   public class Payment { 
+       public void ProcessPayment(PaymentType type) { }
+   }
+   
+   // Depois
+   public interface IPaymentMethod { }
+   public class Paypal : IPaymentMethod { }
+   public class CreditCard : IPaymentMethod { }
+   ```
 
-5. **D** - **Dependency Inversion Principle (Princípio da Inversão de Dependência)**  
-   Os módulos de alto nível não devem depender de módulos de baixo nível, ambos devem depender de abstrações. Isso resulta em um código mais modular e flexível.
+3. **Liskov Substitution Principle (LSP)**  
+   - **Antes:** Substituição de classes que não respeitam contratos.  
+   - **Depois:** Classes filhas que podem ser substituídas sem quebrar funcionalidades.
 
-## Tecnologia Stack
-- .NET Core
-- C#
-- Entity Framework
-- xUnit
-- Docker
-- Git
+4. **Interface Segregation Principle (ISP)**  
+   - **Antes:** Interfaces grandes que forçam implementações desnecessárias.  
+   - **Depois:** Múltiplas interfaces pequenas e específicas.
+   
+5. **Dependency Inversion Principle (DIP)**  
+   - **Antes:** Módulos de alto nível dependem de módulos de baixo nível.  
+   - **Depois:** Ambos dependem de abstrações.
+
+   ```csharp
+   // Antes
+   public class NotificationService { 
+       private EmailService _emailService;
+       public NotificationService() { 
+           _emailService = new EmailService();
+       }
+   }
+   
+   // Depois
+   public class NotificationService { 
+       private readonly IEmailService _emailService;
+       public NotificationService(IEmailService emailService) { 
+           _emailService = emailService;
+       }
+   }
+   ```
+
+## Technology Stack
+| Tecnologia        | Versão      |
+|-------------------|-------------|
+| C#                | 10.0        |
+| .NET Core         | 3.1         |
+| Entity Framework  | 5.0         |
 
 ## Estrutura do Projeto
-    ├── src  
-    │   ├── Project  
-    │   │   ├── Controllers  
-    │   │   ├── Models  
-    │   │   ├── Services  
-    │   │   └── Repositories  
-    └── tests  
-        ├── Project.Tests  
-        └── Project.IntegrationTests
+```
+/myproject
+  /src
+  /tests
+  /docs
+```
+
+## Pré-requisitos
+* .NET Core 3.1 
+* Visual Studio ou VS Code
 
 ## Guia de Instalação
-1. Certifique-se de que você tem o [.NET SDK](https://dotnet.microsoft.com/download) instalado.
-2. Clone este repositório:  
-   `git clone https://github.com/jrmoreiram/solid-csharp`
-3. Navegue até o diretório do projeto:  
-   `cd solid-csharp`
-4. Restaure as dependências:  
-   `dotnet restore`
-5. Execute o projeto:  
-   `dotnet run`
+1. Clone o repositório.
+2. Execute `dotnet restore` no diretório do projeto.
+3. Execute `dotnet build`.
 
 ## Exemplos de Uso
 ```csharp
-public class ExampleController : ControllerBase  
-{  
-    private readonly IExampleService _exampleService;
-    
-    public ExampleController(IExampleService exampleService)  
-    {  
-        _exampleService = exampleService;  
-    }  
-}
+var userManager = new UserManager();
+userManager.RegisterUser(new User());
 ```
 
+## Padrões e Convenções
+- Nomeação em PascalCase para classes
+- Método deve ser nomeado em camelCase
+
 ## Diretrizes de Contribuição
-1. Faça um fork deste repositório.
-2. Crie uma nova branch (`git checkout -b feature/YourFeature`).
-3. Faça suas alterações e adicione os arquivos (`git add .`).
-4. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`).
-5. Envie para o repositório remoto (`git push origin feature/YourFeature`).
-6. Crie um novo Pull Request.
+1. Faça um fork do repositório.
+2. Crie uma branch para suas alterações.
+3. Envie um Pull Request.
 
 ## Recursos Adicionais
-- [Princípios SOLID no Design de Software](https://www.pluralsight.com/guides/solid-principles-in-software-development)
-- [Artigo sobre SOLID](https://medium.com/@itsmeatalex/a-simple-guide-to-solid-principles-in-c-41b73da0e750)  
-- [Cursos sobre Design Patterns e SOLID](https://www.udemy.com/course/design-patterns-in-csharp/)  
+* [DevMedia SOLID Course](https://www.devmedia.com.br/course?id=solid)
+* [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
 
+## Licença
+Este projeto está licenciado sob a Licença MIT.
 
----
+## Informações do Autor
+Criado por: **jrmoreiram** | E-mail: jrmoreiram@example.com
