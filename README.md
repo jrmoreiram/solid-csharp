@@ -8,20 +8,20 @@
 
 ## 📋 Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Arquitetura e Princípios SOLID](#arquitetura-e-princípios-solid)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Funcionalidades](#funcionalidades)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação e Configuração](#instalação-e-configuração)
-- [Executando o Projeto](#executando-o-projeto)
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Arquitetura e Princípios SOLID](#%EF%B8%8F-arquitetura-e-princípios-solid)
+- [Tecnologias Utilizadas](#%EF%B8%8F-tecnologias-utilizadas)
+- [Funcionalidades](#-funcionalidades)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Pré-requisitos](#-pré-requisitos)
+- [Instalação e Configuração](#-instalação-e-configuração)
+- [Executando o Projeto](#%EF%B8%8F-executando-o-projeto)
 - [API REST](#api-rest)
-- [Testes](#testes)
-- [Padrões de Projeto Implementados](#padrões-de-projeto-implementados)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
-- [Autor](#autor)
+- [Testes](#-testes)
+- [Padrões de Projeto Implementados](#-padrões-de-projeto-implementados)
+- [Contribuindo](#-contribuindo)
+- [Licença](#-licença)
+- [Autor](#%E2%80%8D-autor)
 
 ---
 
@@ -749,7 +749,7 @@ Contribuições são bem-vindas! Para contribuir:
 ### **Princípios SOLID**
 - [SOLID Principles - Wikipedia](https://en.wikipedia.org/wiki/SOLID)
 - [SOLID Principles in C#](https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/)
-- [Curso SOLID - DevMedia](https://www.devmedia.com.br/course?id=solid)
+- [Curso SOLID - Alura](https://www.alura.com.br/course?id=solid)
 
 ### **Padrões de Projeto**
 - [Design Patterns in C#](https://refactoring.guru/design-patterns/csharp)
@@ -804,7 +804,7 @@ copies or substantial portions of the Software.
 ## 🙏 Agradecimentos
 
 - **Alura** - Plataforma de ensino e conteúdo educacional
-- **DevMedia** - Curso SOLID com C#: princípios da programação orientada a objetos
+- **Alura** - Curso SOLID com C#: princípios da programação orientada a objetos
 - Comunidade .NET e C#
 
 ---
